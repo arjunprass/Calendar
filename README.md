@@ -134,31 +134,13 @@ npm run preview
 - Simplified hero image
 - Full-width controls and buttons
 
-## 🔧 Customization
 
-### Adding Custom Themes
-Edit `Calendar.jsx` to add more theme colors:
-```javascript
-const colors = ['indigo', 'violet', 'cyan', 'rose', 'amber', 'emerald', 'YOUR_NEW_COLOR']
+
+
+
 ```
 
-Then add corresponding CSS variables in `global.css`:
-```css
-.calendar-container.theme-yourcolor {
-  --primary-color: #YourColor;
-  --primary-darker: #DarkerShade;
-  --primary-lighter: #LighterShade;
-}
-```
 
-### Customizing Images
-Update the `generateHeroImage()` function with your own image URLs or a dynamic image service.
-
-### Extending Notes
-Store notes in localStorage:
-```javascript
-localStorage.setItem(`calendar-notes-${key}`, notes)
-```
 
 ## 🎓 Learning Outcomes
 
@@ -173,9 +155,6 @@ This component demonstrates:
 - Theme system implementation
 - Animation and micro-interactions
 
-## 📄 License
-
-MIT
 
 ---
 
