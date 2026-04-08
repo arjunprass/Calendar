@@ -1,0 +1,89 @@
+.spiral-binding {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: linear-gradient(90deg, var(--bg-secondary) 0%, var(--bg-secondary) 100%);
+  border-bottom: 3px solid var(--border-color);
+  position: relative;
+}
+
+.spiral-binding::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--text-tertiary) 0px,
+    var(--text-tertiary) 2px,
+    transparent 2px,
+    transparent 8px
+  );
+  transform: translateY(-50%);
+}
+
+.spiral-hole {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, var(--bg-primary), #999);
+  box-shadow: 
+    inset -2px -2px 3px rgba(0, 0, 0, 0.2),
+    inset 2px 2px 3px rgba(255, 255, 255, 0.1),
+    0 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 1;
+}
+
+.spiral-hole::before,
+.spiral-hole::after {
+  content: '';
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  width: 6px;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+}
+
+.dark .spiral-hole {
+  background: radial-gradient(circle at 30% 30%, #333, #1a1a1a);
+  box-shadow: 
+    inset -2px -2px 3px rgba(0, 0, 0, 0.5),
+    inset 2px 2px 3px rgba(255, 255, 255, 0.05),
+    0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 768px) {
+  .spiral-binding {
+    padding: 0.75rem 1.5rem;
+  }
+
+  .spiral-hole {
+    width: 14px;
+    height: 14px;
+  }
+
+  .spiral-binding {
+    padding: 0.5rem 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .spiral-binding {
+    padding: 0.5rem 1rem;
+  }
+
+  .spiral-hole {
+    width: 12px;
+    height: 12px;
+  }
+
+  .spiral-binding::before {
+    height: 1px;
+  }
+}
